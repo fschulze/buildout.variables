@@ -64,6 +64,8 @@ class OpStr(object):
             repl = ''
         if sub:
             self.value = re.sub(sub, repl, s)
+        else:
+            self.value = s
 
     def __call__(self, buildout, lookup):
         return self.value
@@ -103,15 +105,18 @@ class Variables(object):
 class Recipe(object):
     def __init__(self, buildout, name, options):
         variables = Variables()
+        data = {}
         if options.get('index-file'):
             if os.path.exists(options['index-file']):
                 with rsfile.rsopen(options['index-file']) as f:
                     data = json.load(f)
-            else:
-                data = {}
-            variables.lookup['index'] = data.setdefault(
-                options['index-key'],
-                int(options.get('index-start', 1)))
+        key = options.get('index-key')
+        if key is not None:
+            if key not in data:
+                data[key] = len(data)
+            index_start = int(options.get('index-start', 1))
+            variables.lookup['index'] = data[key] + index_start
+        if options.get('index-file'):
             with rsfile.rsopen(options['index-file'], 'wb') as f:
                 json.dump(data, f, indent=4)
         for k, v in options.items():
