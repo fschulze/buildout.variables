@@ -12,7 +12,7 @@ HISTORY = open(os.path.join(here, 'HISTORY.rst')).read()
 setup(
     name='buildout.variables',
     version=version,
-    description="Adds small features to zc.recipe.cmmi",
+    description="Provides dynamic variables in buildouts",
     long_description=README + "\n\n" + HISTORY,
     author='Florian Schulze',
     author_email='florian.schulze@gmx.net',
