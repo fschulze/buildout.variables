@@ -17,6 +17,7 @@ setup(
     author='Florian Schulze',
     author_email='florian.schulze@gmx.net',
     url='http://github.com/fschulze/buildout.variables',
+    license='GPL',
     include_package_data=True,
     packages=['buildout', 'buildout.variables'],
     namespace_packages=['buildout'],
