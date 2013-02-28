@@ -13,7 +13,7 @@ Example buildout section::
     index-start = 0
     index-key = ${env:JOB_NAME}
     portbase = indexed 12{index}00
-    port = int ${portbase} 0:100
+    port = int portbase 0:100
     port-instance = new port
     jobname = str "${env:JOB_NAME}" [^a-zA-Z0-9] _
 
