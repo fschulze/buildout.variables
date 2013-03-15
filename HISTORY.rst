@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.3 - 2013-03-15
+----------------
+
+* First official release.
+  [fschulze]
+
+
 0.2 - Unreleased
 ----------------
 
@@ -11,5 +18,5 @@ Changelog
 0.1 - Unreleased
 ----------------
 
-* Initial release.
+* Initial version.
   [fschulze (Florian Schulze)]
