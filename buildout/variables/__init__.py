@@ -128,3 +128,6 @@ class Recipe(object):
 
     def install(self):
         pass
+
+    def update(self):
+        pass
